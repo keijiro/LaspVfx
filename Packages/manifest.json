@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "com.unity.package-manager-ui": "2.1.2",
+    "com.unity.render-pipelines.high-definition": "5.10.0-preview",
+    "com.unity.visualeffectgraph": "5.10.0-preview",
+    "jp.keijiro.lasp": "https://github.com/keijiro/Lasp.git#upm",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.vr": "1.0.0",
+    "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "jp.keijiro.lasp": {
+      "hash": "d48c0d55fb969274bbf04e7d3341d724f1b58f52",
+      "revision": "upm"
+    }
+  }
+}
