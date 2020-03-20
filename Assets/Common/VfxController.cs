@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 using UnityEngine.Experimental.VFX;
 
@@ -10,3 +11,4 @@ sealed class VfxController : MonoBehaviour
         set { _target.SetFloat(_parameterName, value); }
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 
 sealed class WaveformBaker : MonoBehaviour
@@ -47,3 +48,4 @@ sealed class WaveformBaker : MonoBehaviour
         Graphics.Blit(null, _target, _material, 0);
     }
 }
+*/
