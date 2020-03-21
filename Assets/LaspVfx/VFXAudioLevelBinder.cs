@@ -4,15 +4,15 @@ using UnityEngine.VFX.Utility;
 
 namespace Lasp.Vfx
 {
-    [AddComponentMenu("VFX/Property Binders/Lasp/Audio Level Binder")]
-    [VFXBinder("Lasp/Audio Level")]
-    class VFXAudioLevelBinder : VFXBinderBase
+    [AddComponentMenu("VFX/Property Binders/LASP/Audio Level Binder")]
+    [VFXBinder("LASP/Audio Level")]
+    sealed class VFXAudioLevelBinder : VFXBinderBase
     {
         public string Property
           { get => (string)_property; set => _property = value; }
 
         [VFXPropertyBinding("System.Single"), SerializeField]
-        protected ExposedProperty _property = "AudioLevel";
+        ExposedProperty _property = "AudioLevel";
 
         public Lasp.AudioLevelTracker Target = null;
 
