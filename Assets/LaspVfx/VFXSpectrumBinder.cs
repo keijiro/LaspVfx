@@ -50,7 +50,7 @@ namespace Lasp.Vfx
 
         const int SpectrumWidth = 512;
 
-        DftBuffer _dft;
+        FftBuffer _fft;
         Texture2D _texture;
 
         void OnDestroy()
@@ -66,14 +66,14 @@ namespace Lasp.Vfx
         {
             base.OnDisable();
 
-            _dft?.Dispose();
-            _dft = null;
+            _fft?.Dispose();
+            _fft = null;
         }
 
         void UpdateTexture()
         {
-            if (_dft == null)
-                _dft = new DftBuffer(SpectrumWidth * 2);
+            if (_fft == null)
+                _fft = new FftBuffer(SpectrumWidth * 2);
 
             if (_texture == null)
             {
@@ -84,10 +84,10 @@ namespace Lasp.Vfx
                   };
             }
 
-            _dft.Push(Target.AudioDataSlice);
-            _dft.Analyze();
+            _fft.Push(Target.AudioDataSlice);
+            _fft.Analyze();
 
-            _texture.LoadRawTextureData(_dft.Spectrum);
+            _texture.LoadRawTextureData(_fft.Spectrum);
             _texture.Apply();
         }
 
