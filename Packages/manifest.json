@@ -16,8 +16,8 @@
     }
   ],
   "dependencies": {
-    "com.unity.render-pipelines.high-definition": "7.2.1",
+    "com.unity.render-pipelines.high-definition": "7.3.1",
     "jp.keijiro.klak.motion": "1.0.1",
-    "jp.keijiro.lasp": "2.0.0"
+    "jp.keijiro.lasp": "2.1.2"
   }
 }

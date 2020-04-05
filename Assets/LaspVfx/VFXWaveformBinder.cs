@@ -11,9 +11,9 @@ namespace Lasp.Vfx
     {
         #region VFX Binder Implementation
 
-        public string SampleCountProperty {
-            get => (string)_sampleCountProperty;
-            set => _sampleCountProperty = value;
+        public string TextureProperty {
+            get => (string)_textureProperty;
+            set => _textureProperty = value;
         }
 
         public string TextureWidthProperty {
@@ -21,34 +21,34 @@ namespace Lasp.Vfx
             set => _textureWidthProperty = value;
         }
 
-        public string TextureProperty {
-            get => (string)_textureProperty;
-            set => _textureProperty = value;
+        public string SampleCountProperty {
+            get => (string)_sampleCountProperty;
+            set => _sampleCountProperty = value;
         }
 
-        [VFXPropertyBinding("System.UInt32"), SerializeField]
-        ExposedProperty _sampleCountProperty = "SampleCount";
+        [VFXPropertyBinding("UnityEngine.Texture2D"), SerializeField]
+        ExposedProperty _textureProperty = "WaveformTexture";
 
         [VFXPropertyBinding("System.UInt32"), SerializeField]
         ExposedProperty _textureWidthProperty = "TextureWidth";
 
-        [VFXPropertyBinding("UnityEngine.Texture2D"), SerializeField]
-        ExposedProperty _textureProperty = "WaveformTexture";
+        [VFXPropertyBinding("System.UInt32"), SerializeField]
+        ExposedProperty _sampleCountProperty = "SampleCount";
 
         public Lasp.AudioLevelTracker Target = null;
 
         public override bool IsValid(VisualEffect component)
           => Target != null &&
-             component.HasUInt(_sampleCountProperty) &&
+             component.HasTexture(_textureProperty) &&
              component.HasUInt(_textureWidthProperty) &&
-             component.HasTexture(_textureProperty);
+             component.HasUInt(_sampleCountProperty);
 
         public override void UpdateBinding(VisualEffect component)
         {
             UpdateTexture();
-            component.SetUInt(_sampleCountProperty, (uint)_sampleCount);
-            component.SetUInt(_textureWidthProperty, (uint)MaxSamples);
             component.SetTexture(_textureProperty, _texture);
+            component.SetUInt(_textureWidthProperty, (uint)MaxSamples);
+            component.SetUInt(_sampleCountProperty, (uint)_sampleCount);
         }
 
         public override string ToString()
@@ -95,7 +95,7 @@ namespace Lasp.Vfx
                   (MaxSamples, Allocator.Persistent,
                    NativeArrayOptions.UninitializedMemory);
 
-            var slice = Target.AudioDataSlice;
+            var slice = Target.audioDataSlice;
             _sampleCount = Mathf.Min(_buffer.Length, slice.Length);
 
             slice.CopyTo(_buffer.GetSubArray(0, _sampleCount));
