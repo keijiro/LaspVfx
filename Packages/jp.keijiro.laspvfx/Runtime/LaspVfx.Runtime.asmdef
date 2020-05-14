@@ -1,0 +1,16 @@
+{
+    "name": "LaspVfx.Runtime",
+    "references": [
+        "GUID:d04eb9c554ad44ceab303cecf0c0cf82",
+        "GUID:e438a90965872694392541e22197078e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
