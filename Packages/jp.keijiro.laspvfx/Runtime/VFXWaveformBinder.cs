@@ -98,10 +98,12 @@ namespace Lasp.Vfx
             var slice = Target.audioDataSlice;
             _sampleCount = Mathf.Min(_buffer.Length, slice.Length);
 
-            slice.CopyTo(_buffer.GetSubArray(0, _sampleCount));
-
-            _texture.LoadRawTextureData(_buffer);
-            _texture.Apply();
+            if (_sampleCount > 0)
+            {
+                slice.CopyTo(_buffer.GetSubArray(0, _sampleCount));
+                _texture.LoadRawTextureData(_buffer);
+                _texture.Apply();
+            }
         }
 
         #endregion
