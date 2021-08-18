@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "com.unity.render-pipelines.high-definition": "10.6.0",
+    "org.nuget.system.memory": "4.5.3",
     "jp.keijiro.klak.motion": "1.0.2",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.imageconversion": "1.0.0",
