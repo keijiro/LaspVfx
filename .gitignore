@@ -5,15 +5,9 @@ Desktop.ini
 # macOS
 .DS_Store
 
-# Code Editors
-/.idea
-/.vscode
-/*.csproj
-/*.sln
-*.swp
-*.vcxproj.user
-
 # Unity
 /Library
 /Logs
+/Recordings
+/UserSettings
 /Temp
