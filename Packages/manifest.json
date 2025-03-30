@@ -11,6 +11,7 @@
   "dependencies": {
     "com.unity.render-pipelines.high-definition": "17.0.4",
     "jp.keijiro.klak.motion": "1.1.0",
-    "jp.keijiro.klutter-tools": "2.1.0"
+    "jp.keijiro.klutter-tools": "2.1.0",
+    "jp.keijiro.vfxgraphassets": "3.9.1"
   }
 }
